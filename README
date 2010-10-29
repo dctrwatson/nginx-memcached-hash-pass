@@ -1,0 +1,15 @@
+Nginx Memcached Hash Pass
+=========================
+
+Hash the key using SHA256 to ensure that it does not grow beyong the 
+key length limit of memcached.
+
+
+Configuration
+-------------
+
+Functionally equivalent to memcached_pass.
+
+::
+    set $memcached_hash_key $request_uri
+    memcached_hash_pass 127.0.0.1:11211;
